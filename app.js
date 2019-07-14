@@ -16,7 +16,7 @@ const {
 const app = express()
 
 app.use(bodyParser.json())
-app.use(express.static('static'))
+app.use(express.static('./static/build'))
 
 app.get('/v1/cpf', validateCpf, cpf.search)
 app.post('/v1/cpf', validateCpf, cpf.add)

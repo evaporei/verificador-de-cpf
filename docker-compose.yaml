@@ -17,8 +17,6 @@ services:
   app:
     container_name: app
     build: .
-    volumes:
-      - ./:/usr/app
     command: npm start
     depends_on:
       - postgres
