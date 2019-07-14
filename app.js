@@ -5,22 +5,26 @@ const bodyParser = require('body-parser')
 
 const {
   cpf,
-  errorHandler,
   status
 } = require('./controllers')
+
+const {
+  error,
+  validateCpf
+} = require('./middlewares')
 
 const app = express()
 
 app.use(bodyParser.json())
 app.use(express.static('static'))
 
-app.get('/consulta', cpf)
-app.post('/consulta', cpf)
-app.delete('/consulta', cpf)
+app.get('/consulta', validateCpf, cpf)
+app.post('/consulta', validateCpf, cpf)
+app.delete('/consulta', validateCpf, cpf)
 
 app.get('/status', status)
 
-app.use(errorHandler)
+app.use(error)
 
 app.listen(3000, () => {
   console.log('Server running on port 3000!')

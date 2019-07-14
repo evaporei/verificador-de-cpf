@@ -1,6 +1,7 @@
-const cpf = (req, res, next) => {
+const cpf = (req, res) => {
   return res.status(200).send({
-    status: 'FREE' // 'BLOCK'
+    cpf: '53842707053',
+    blacklisted: true
   })
 }
 

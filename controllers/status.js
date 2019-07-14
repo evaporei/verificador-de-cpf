@@ -1,4 +1,4 @@
-const status = (req, res, next) => {
+const status = (req, res) => {
   return res.status(200).send({
     uptime: new Date().toISOString(),
     amount: {
