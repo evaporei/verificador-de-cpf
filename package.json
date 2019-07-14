@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Verificador de CPF",
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tisoap/verificador-de-cpf.git"
+  },
   "license": "MIT",
   "author": "Tiso Alvarez Puccinelli",
   "main": "index.js",
