@@ -1,4 +1,5 @@
 const { CPFBlacklist } = require('../database')
+const { status } = require('../services')
 
 const add = async (req, res) => {
   const { cpf } = req.body
@@ -20,6 +21,8 @@ const search = async (req, res) => {
   })
 
   const blacklisted = !!foundCpf
+
+  status.incrementSearchAmount()
 
   return res.status(200).send({
     cpf,

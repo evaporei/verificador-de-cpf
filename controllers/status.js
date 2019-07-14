@@ -1,9 +1,11 @@
-const status = (req, res) => {
+const { status: statusService } = require('../services')
+
+const status = async (req, res) => {
   return res.status(200).send({
-    uptime: new Date().toISOString(),
+    uptime: statusService.getServerUptime(),
     amount: {
-      blacklist: 10,
-      searches: 8
+      blacklist: await statusService.getBlacklistCount(),
+      searches: statusService.getSearchesAmount()
     }
   })
 }
