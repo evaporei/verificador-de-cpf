@@ -2,7 +2,9 @@ module.exports = (sequelize, DataTypes) => {
   const CPFBlacklist = sequelize.define('CPFBlacklist', {
     cpf: {
       allowNull: false,
-      type: DataTypes.STRING
+      autoIncrement: false,
+      primaryKey: true,
+      type: DataTypes.STRING,
     }
   }, {
     timestamps: true,

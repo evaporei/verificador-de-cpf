@@ -1,15 +1,11 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('CPFBlacklist', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
       cpf: {
         allowNull: false,
-        type: Sequelize.STRING
+        autoIncrement: false,
+        primaryKey: true,
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
