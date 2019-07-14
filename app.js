@@ -18,11 +18,11 @@ const app = express()
 app.use(bodyParser.json())
 app.use(express.static('static'))
 
-app.get('/consulta', validateCpf, cpf)
-app.post('/consulta', validateCpf, cpf)
-app.delete('/consulta', validateCpf, cpf)
+app.get('/v1/cpf', validateCpf, cpf.search)
+app.post('/v1/cpf', validateCpf, cpf.add)
+app.delete('/v1/cpf', validateCpf, cpf.remove)
 
-app.get('/status', status)
+app.get('/v1/status', status)
 
 app.use(error)
 
