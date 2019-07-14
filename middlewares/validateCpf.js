@@ -1,9 +1,11 @@
-const { isValid } = require('cpf')
+const { validate, strip } = require('cpf-check')
 
 const validateCpf = (req, res, next) => {
   const cpf = req.query.cpf || req.body.cpf
+  const isValidCpf = validate(cpf)
 
-  if (isValid(cpf)) {
+  if (isValidCpf) {
+    res.locals.cpf = strip(cpf)
     return next()
   }
 

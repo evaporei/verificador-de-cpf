@@ -2,7 +2,7 @@ const { CPFBlacklist } = require('../database')
 const { status } = require('../services')
 
 const add = async (req, res) => {
-  const { cpf } = req.body
+  const { cpf } = res.locals
   const createdCpf = await CPFBlacklist.create({ cpf })
 
   return res.status(200).send({
@@ -12,7 +12,7 @@ const add = async (req, res) => {
 }
 
 const search = async (req, res) => {
-  const { cpf } = req.query
+  const { cpf } = res.locals
 
   const foundCpf = await CPFBlacklist.findOne({
     where: { cpf },
@@ -31,7 +31,7 @@ const search = async (req, res) => {
 }
 
 const remove = async (req, res) => {
-  const { cpf } = req.body
+  const { cpf } = res.locals
 
   await CPFBlacklist.destroy({
     where: { cpf },
