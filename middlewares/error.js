@@ -1,6 +1,6 @@
-const errorHandler = (error, req, res, next) => {
+const errorHandler = (error, req, res) => {
   console.error(error)
-  res.status(500).send({
+  return res.status(500).send({
     message: 'Internal server error'
   })
 }
