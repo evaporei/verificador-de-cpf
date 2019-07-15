@@ -23,5 +23,12 @@ services:
     ports:
       - "3000:3000"
 
+  app-test:
+    container_name: app-test
+    build: .
+    command: npm test
+    depends_on:
+      - postgres
+
 volumes:
   postgres-data:

@@ -14,7 +14,7 @@ Depois execute os comandos em sequencia:
 ```
 docker-compose build
 
-docker-compose up
+docker-compose up app
 ```
 
 Quando os containers estiverem rodando, acesse o container do Node utilizando o comando:
@@ -118,3 +118,9 @@ Retorno:
 - `middlewares`: Responsáveis em validar as requisições antes de repassá-las para os controladores.
 - `services`: Contém a lógica de negócio da aplicação.
 - `static`: Tudo relacionado ao front-end fica aqui, é uma aplicação React.
+
+## Testes
+
+```
+docker-compose up --abort-on-container-exit app-test
+```
