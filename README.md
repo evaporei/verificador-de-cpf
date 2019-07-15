@@ -86,7 +86,7 @@ Retorno:
 }
 ```
 
-### `GET /v1/cpf`
+### `GET /v1/status`
 
 Retorna informações de status do servidor.
 
