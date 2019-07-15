@@ -121,6 +121,8 @@ Retorno:
 
 ## Testes
 
+Os testes da aplicação são executados dentro de um container Docker, através do comando abaixo:
+
 ```
 docker-compose up --abort-on-container-exit app-test
 ```

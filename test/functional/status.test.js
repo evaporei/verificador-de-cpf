@@ -22,7 +22,7 @@ describe('Status', () => {
         expect(amount).toHaveProperty('searches')
 
         const { blacklist, searches } = amount
-        expect(searches).toBe(0)
+        expect(searches).toBeGreaterThanOrEqual(0)
         expect(blacklist).toBeGreaterThanOrEqual(0)
         done()
       })
