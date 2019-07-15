@@ -31,6 +31,12 @@ npm run migrate
 
 Depois você pode acessar [localhost:3000](http://localhost:3000/) em seu navegador para interagir com o formulário da aplicação.
 
+Para parar a aplicação, execute:
+
+```
+docker-compose down
+```
+
 ## Rotas
 
 ### `GET /`
